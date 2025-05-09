@@ -11,7 +11,7 @@ namespace HumanResourcesForm
             
         }
 
-        DbSet<Contact> Contacts { get; set; }   
-        DbSet<Form> Forms { get; set; }
+        public DbSet<Contact> Contacts { get; set; }   
+        public DbSet<Form> Forms { get; set; }
     }
 }
