@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace HumanResourcesForm.Models
+namespace HumanResourcesForm
 {
     public class Contact : IIdentity
     {

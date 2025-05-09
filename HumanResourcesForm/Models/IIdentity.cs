@@ -1,4 +1,4 @@
-﻿namespace HumanResourcesForm.Models
+﻿namespace HumanResourcesForm
 {
     public interface IIdentity
     {
