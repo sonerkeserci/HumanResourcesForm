@@ -46,7 +46,7 @@ namespace HumanResourcesForm.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Contacts");
+                    b.ToTable("Contacts", (string)null);
                 });
 
             modelBuilder.Entity("HumanResourcesForm.Form", b =>
@@ -84,7 +84,7 @@ namespace HumanResourcesForm.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Forms");
+                    b.ToTable("Forms", (string)null);
                 });
 #pragma warning restore 612, 618
         }

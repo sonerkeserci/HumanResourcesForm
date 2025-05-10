@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HumanResourcesForm
 {
@@ -16,5 +17,11 @@ namespace HumanResourcesForm
 
         [StringLength(250), Required]
         public required string YourMessage { get; set; }
+
+        // Foreign key
+        public int FormId { get; set; }
+
+        [ForeignKey("FormId")]
+        public Form Form { get; set; }
     }
 }

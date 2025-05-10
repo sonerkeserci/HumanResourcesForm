@@ -22,6 +22,8 @@ namespace HumanResourcesForm
         [StringLength(2050), Required]
         public string CV_Url { get; set; }
 
+        public ICollection<Contact> Contacts { get; set; }
+
 
 
 
