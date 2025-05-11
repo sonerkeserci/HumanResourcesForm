@@ -1,0 +1,28 @@
+﻿@model List<HumanResourcesForm.Models.Applicant>
+
+@{
+    ViewData["Title"] = "Applicants";
+}
+
+<h2>Applicants</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name Surname</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.NameSurname</td>
+                <td>@item.Email</td>
+                <td>@item.PhoneNumber</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
