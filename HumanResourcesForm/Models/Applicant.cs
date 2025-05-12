@@ -8,21 +8,21 @@ namespace HumanResourcesForm.Models
 
 
         [Required, StringLength(20)]
-        public string NameSurname { get; set; }
+        public string NameSurname { get; set; }=null!;
 
         [Required, StringLength(11)]
-        public string PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }= null!;
 
         [Required, StringLength(40)]
-        public string Email { get; set; }
+        public string Email { get; set; } = null!;
 
         [Required, StringLength(11)]
-        public string IdentityNumber { get; set; }
+        public string IdentityNumber { get; set; } = null!;
 
-        [Required, StringLength(2050)]
-        public string CvUrl { get; set; }
+        [StringLength(2050)]
+        public string? CvUrl { get; set; }
 
 
-        public ICollection<ContactMessage> Messages { get; set; }
+        public ICollection<ContactMessage>? Messages { get; set; }
     }
 }
