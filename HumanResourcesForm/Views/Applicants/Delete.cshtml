@@ -1,0 +1,23 @@
+﻿@model HumanResourcesForm.Models.Applicant
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete Applicant</h2>
+
+<h4>Are you sure you want to delete this?</h4>
+
+<div>
+    <strong>Name:</strong> @Model.NameSurname <br />
+    <strong>Email:</strong> @Model.Email <br />
+    <strong>Phone:</strong> @Model.PhoneNumber <br />
+    <strong>Identity Number:</strong> @Model.IdentityNumber <br />
+    <strong>CV URL:</strong> @Model.CvUrl
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Yes, delete</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

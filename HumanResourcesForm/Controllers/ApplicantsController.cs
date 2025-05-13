@@ -12,14 +12,15 @@ namespace HumanResourcesForm.Controllers
             _context = context;
         }
 
-        public IActionResult Index() 
+        //GET: Index
+        public IActionResult Index()
         {
             var applicants = _context.Applicants.ToList();
             return View(applicants);
         }
 
-        //GET
-        public IActionResult Create() 
+        //GET: Create
+        public IActionResult Create()
         {
             return View();
         }
@@ -39,5 +40,71 @@ namespace HumanResourcesForm.Controllers
             return View(applicant);
         }
 
+        //GET: Edit
+        public IActionResult Edit(int id)
+        {
+            var applicant = _context.Applicants.Find(id);
+            if (applicant == null)
+            {
+                return NotFound();
+            }
+            return View(applicant);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(int id, Applicant applicant)
+        {
+            if (id != applicant.Id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                _context.Update(applicant);
+                _context.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(applicant);
+        }
+
+        //GET: Delete
+        public IActionResult Delete(int id)
+        {
+            var applicant = _context.Applicants.Find(id);
+            if (applicant == null)
+            {
+                return NotFound();
+            }
+            return View(applicant);
+        }
+
+        //POST
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeleteConfirmed(int id)
+        {
+            var applicant = _context.Applicants.Find(id);
+            if (applicant == null)
+            {
+                return NotFound();
+            }
+            _context.Applicants.Remove(applicant);
+            _context.SaveChanges();
+            return RedirectToAction(nameof(Index));
+
+        }
+
+        //GET: Details
+        public IActionResult Details(int id)
+        {
+            var applicant = _context.Applicants.Find(id);
+            if (applicant == null)
+            {
+                return NotFound();
+            }
+            return View(applicant);
+        }
     }
 }

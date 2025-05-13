@@ -1,0 +1,11 @@
+﻿@model HumanResourcesForm.Models.Applicant
+
+<h2>Applicant Details</h2>
+
+<p><strong>Name:</strong> @Model.NameSurname</p>
+<p><strong>Identity Number:</strong> @Model.IdentityNumber</p>
+<p><strong>Email:</strong> @Model.Email</p>
+<p><strong>Phone:</strong> @Model.PhoneNumber</p>
+<p><strong>CV URL:</strong> @Model.CvUrl</p>
+
+<a asp-action="Index" class="btn btn-secondary">Back to List</a>
